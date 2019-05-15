@@ -1,0 +1,7 @@
+<div class="container w-50 border" style="margin-top: 48px">
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+    <%= f.input :content, label: 'Review', error: 'Review is required' %>
+    <%= f.input :rating, label: 'Rating', input_html: { min: '0', max:'5'}  %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+</div>

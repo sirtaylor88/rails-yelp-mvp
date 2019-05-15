@@ -1,0 +1,41 @@
+
+<div class="d-flex justify-content-between w-5" style="margin-top: 16px">
+  <div class="container text-left">
+    <%= link_to "Back to home", restaurants_path %>
+  </div>
+  <div class="container text-right">
+    <%= link_to "Add a review", new_restaurant_review_path(@restaurant)%>
+  </div>
+</div>
+<hr>
+<div class="d-flex">
+  <div class="container">
+    <h1><%= @restaurant.name %></h1>
+    <p>Full address: <%= @restaurant.address %></p>
+    <p>Category: <%= @restaurant.category %></p>
+    <p>Phone: <%= @restaurant.phone_number || 'not given' %></p>
+  </div>
+  <div class="container">
+    <h1>List of reviews</h1>
+    <table style="border-collapse: separate; border-spacing: 16px;">
+      <thead>
+        <th>ID</th>
+        <th>Review</th>
+        <th>Rating</th>
+      </thead>
+      <tbody>
+      <% @reviews.each do |rev|%>
+        <tr>
+          <td><%= rev.id %></td>
+          <td><%= rev.content %></td>
+          <td><%= rev.rating %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<hr>
+
+

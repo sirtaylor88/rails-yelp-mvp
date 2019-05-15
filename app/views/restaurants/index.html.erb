@@ -1,0 +1,33 @@
+<div class="d-flex justify-content-between" style="margin-top: 16px">
+  <h1>All the restaurants</h1>
+  <%= link_to "Add a restaurant", new_restaurant_path %>
+</div>
+<hr>
+<div class="container">
+  <table style="border-collapse: separate; border-spacing: 16px;">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Category</th>
+        <th>Phone number</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @restaurants.each do |resto| %>
+      <tr>
+        <td><%= resto.id %></td>
+        <td><%= resto.name %></td>
+        <td><%= resto.address %></td>
+        <td><%= resto.category %></td>
+        <td><%= resto.phone_number %></td>
+        <td><%= link_to "See details", restaurant_path(resto) %></td>
+      </tr>
+    <%end%>
+    </tbody>
+  </table>
+</div>
+<hr>
+

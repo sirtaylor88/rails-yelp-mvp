@@ -1,0 +1,10 @@
+<div class="container w-50 border" style="margin-top: 48px">
+  <%= simple_form_for @restaurant do |f| %>
+    <%= f.input :name, label: 'Restaurant name', error: 'Name is required' %>
+    <%= f.input :address, label: 'Full address', error: 'Address is required'  %>
+    <%= f.input :category, label: 'Category', error: 'Category is required' %>
+    <%= f.input :phone_number, label: 'Phone'%>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
